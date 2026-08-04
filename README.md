@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rishank Kesarwani Portfolio
 
-## Getting Started
+Modern portfolio website built with Next.js App Router, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## Step 1: Initialize The Project
 
 ```bash
+npx create-next-app@latest portfolio --typescript --eslint --app --src-dir=false --tailwind
+cd portfolio
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Recommended folder structure:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```txt
+app/
+  globals.css
+  layout.tsx
+  page.tsx
+components/
+  About.tsx
+  ContactForm.tsx
+  Hero.tsx
+  Navbar.tsx
+  Projects.tsx
+  Skills.tsx
+data/
+  portfolio.ts
+public/
+tailwind.config.js
+postcss.config.mjs
+next.config.ts
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Step 2: Portfolio Sections
 
-## Learn More
+This project includes:
 
-To learn more about Next.js, take a look at the following resources:
+- Responsive navigation bar with a mobile hamburger menu
+- Hero section with headline, bio, and calls to action
+- About Me section based on resume experience
+- Projects grid mapped from `data/portfolio.ts`
+- Skills section
+- Dark-mode friendly styling using Tailwind variants
+- Smooth scrolling from `app/globals.css`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Update project links in `data/portfolio.ts` with your real GitHub and live URLs.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Step 3: Contact Form With Formspree
 
-## Deploy on Vercel
+This project uses the React integration for Formspree:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm install @formspree/react
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The contact form is wired to this Formspree form ID:
+
+```tsx
+const [state, handleSubmit] = useForm("mrpzzonj");
+```
+
+To test it locally, run the site, submit the contact form, then confirm the message appears in your Formspree dashboard or arrives by email.
+
+## Step 4: Git And GitHub Commands
+
+Initialize and push to a new GitHub repository:
+
+```bash
+git init
+git add .
+git commit -m "Initial portfolio website"
+gh repo create portfolio --public --source=. --remote=origin --push
+git branch -M main
+git push -u origin main
+```
+
+Link to an existing repository instead:
+
+```bash
+git init
+git add .
+git commit -m "Initial portfolio website"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+git push -u origin main
+```
+
+If the repository already has commits, use:
+
+```bash
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+git branch -M main
+git pull origin main --allow-unrelated-histories
+git push -u origin main
+```
+
+## Step 5: Deploy Free On Vercel
+
+1. Go to [Vercel](https://vercel.com/) and sign in with GitHub.
+2. Select `Add New > Project`.
+3. Import your portfolio GitHub repository.
+4. Keep the defaults:
+   - Framework Preset: Next.js
+   - Build Command: `next build`
+   - Output Directory: leave default
+5. Click `Deploy`.
+
+After deployment, Vercel automatically creates a production deployment every time you push to the `main` branch. Pull requests get preview deployments so you can test changes before merging.
+
+No Vercel environment variable is required for the current Formspree setup because the public form ID is embedded in the React form component.
+
+## Local Commands
+
+```bash
+npm install
+npm run dev
+npm run lint
+npm run build
+```

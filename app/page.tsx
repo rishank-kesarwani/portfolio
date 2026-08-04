@@ -1,7 +1,22 @@
+import { About } from "@/components/About";
+import { ContactForm } from "@/components/ContactForm";
+import { Hero } from "@/components/Hero";
+import { Navbar } from "@/components/Navbar";
+import { Projects } from "@/components/Projects";
+import { Skills } from "@/components/Skills";
+import { projects, skills } from "@/data/portfolio";
+
 export default function Home() {
   return (
-    <main>
-      <h1>Rishank Kesarwani Portfolio</h1>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Projects projects={projects} />
+        <Skills skills={skills} />
+        <ContactForm />
+      </main>
+    </>
   );
 }
