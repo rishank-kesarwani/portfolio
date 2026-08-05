@@ -76,3 +76,26 @@ export const skills = [
   "RAG",
   "OpenAI",
 ];
+
+export const groupedSkills = [
+  {
+    category: "Frontend",
+    icon: "Layout",
+    skills: ["React JS", "Redux", "JavaScript", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    category: "Backend",
+    icon: "Database",
+    skills: ["NodeJS", "REST APIs", "Express", "NestJS", "PostgreSQL"],
+  },
+  {
+    category: "Infrastructure / Cloud",
+    icon: "Cloud",
+    skills: ["AWS", "GCP", "Terraform", "CI/CD", "Docker"],
+  },
+  {
+    category: "AI / LLM",
+    icon: "Sparkles",
+    skills: ["Chat Completions APIs", "Context Window Optimization", "Token Efficiency", "Agentic Coding Workflows", "LangGraph", "RAG"],
+  },
+];
