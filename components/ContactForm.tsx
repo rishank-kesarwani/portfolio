@@ -1,7 +1,7 @@
 "use client";
 
 import { ValidationError, useForm } from "@formspree/react";
-import { FormEvent, useMemo, useState } from "react";
+import { SubmitEvent, useMemo, useState } from "react";
 
 type FormValues = {
   name: string;
@@ -52,7 +52,7 @@ export function ContactForm() {
     return "";
   }, [state.errors, state.succeeded]);
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const nextErrors = validateForm(values);
@@ -63,6 +63,7 @@ export function ContactForm() {
     }
 
     await submitToFormspree(event);
+    setValues(initialValues);
   }
 
   return (
