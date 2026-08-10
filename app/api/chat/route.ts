@@ -1,5 +1,5 @@
 import { google } from "@ai-sdk/google";
-import { streamText, createTextStreamResponse, toTextStream } from "ai";
+import { streamText, createUIMessageStreamResponse, toUIMessageStream } from "ai";
 import { projects, groupedSkills } from "@/data/portfolio";
 
 export async function POST(req: Request) {
@@ -26,7 +26,7 @@ Respond in a friendly, professional tone. Keep responses relatively short and ea
     })),
   });
 
-  return createTextStreamResponse({
-    stream: toTextStream({ stream: result.stream }),
+  return createUIMessageStreamResponse({
+    stream: toUIMessageStream({ stream: result.stream as any }),
   });
 }
