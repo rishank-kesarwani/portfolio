@@ -53,6 +53,15 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/your-username/article-assistant",
     liveUrl: "https://your-article-assistant-demo.com",
   },
+  {
+    title: "File18 Backend Monorepo",
+    description:
+      "An Nx-based monorepo containing NestJS microservices for content ingestion, processing, Temporal workflows, and view personalization.",
+    image: "Backend microservices",
+    techStack: ["NestJS", "TypeScript", "Kafka", "Temporal", "Redis", "PostgreSQL", "GraphQL", "Nx"],
+    githubUrl: "https://github.com/your-username/file18-monorepo",
+    liveUrl: "https://your-file18-monorepo-demo.com",
+  },
 ];
 
 export const skills = [
