@@ -24,7 +24,7 @@ export function Hero() {
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-md border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100 dark:border-white/15 dark:text-white dark:hover:bg-white/10"
+            className="inline-flex items-center justify-center rounded-md border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100 dark:border-white/15 dark:text-white dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-ink-950"
           >
             Contact me
           </a>
@@ -34,12 +34,12 @@ export function Hero() {
       <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-glow dark:border-white/10 dark:bg-white/[0.04]">
         <dl className="grid gap-5 sm:grid-cols-3 lg:grid-cols-1">
           {[
-            ["8+", "years building full-stack web applications"],
-            ["30%", "faster release turnaround through CI/CD improvements"],
-            ["50%", "reduction in production bugs through stronger test coverage"],
+            ["8+", "Years building full-stack web applications & distributed systems"],
+            ["End-to-End", "Architecture spanning React, Next.js, Node.js, NestJS & GCP"],
+            ["AI & Workflows", "Production RAG assistants, LLM orchestration & automation"],
           ].map(([value, label]) => (
             <div key={value} className="rounded-md bg-slate-50 p-5 dark:bg-white/[0.04]">
-              <dt className="text-3xl font-semibold text-slate-950 dark:text-white">{value}</dt>
+              <dt className="text-2xl font-semibold text-slate-950 dark:text-white sm:text-3xl">{value}</dt>
               <dd className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
                 {label}
               </dd>

@@ -26,7 +26,7 @@ export function Chatbot() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim() || !sendMessage) return;
+    if (!input.trim() || !sendMessage || isLoading) return;
     sendMessage({ role: "user", parts: [{ type: "text", text: input }] });
     setInput("");
   };
@@ -34,15 +34,18 @@ export function Chatbot() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+    if (isOpen) {
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages, isOpen]);
 
   return (
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-accent-600 text-white shadow-lg shadow-accent-500/30 transition-transform hover:scale-110 active:scale-95"
-        aria-label="Toggle AI Chatbot"
+        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-accent-600 text-white shadow-lg shadow-accent-500/30 transition-transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-ink-950"
+        aria-label={isOpen ? "Close AI Chatbot" : "Open AI Chatbot"}
+        aria-expanded={isOpen}
       >
         {isOpen ? (
           <LuX className="h-6 w-6" />
@@ -50,18 +53,21 @@ export function Chatbot() {
           <div className="relative flex items-center justify-center">
             <LuMessageCircle className="h-6 w-6" />
             <span className="absolute -right-1 -top-1 flex h-3 w-3">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex h-3 w-3 rounded-full border-2 border-white bg-emerald-500 dark:border-slate-900"></span>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-3 w-3 rounded-full border-2 border-white bg-emerald-500 dark:border-slate-900" />
             </span>
           </div>
         )}
       </button>
 
       <div
-        className={`fixed bottom-6 right-6 z-50 flex h-[550px] max-h-[80vh] w-[350px] flex-col rounded-2xl border border-slate-200 bg-white shadow-2xl transition-all duration-300 sm:w-[400px] dark:border-white/10 dark:bg-[#111315] ${
+        role="dialog"
+        aria-label="AI Assistant Chat"
+        aria-modal="false"
+        className={`fixed bottom-20 right-4 z-50 flex h-[520px] max-h-[80vh] w-[calc(100vw-2rem)] max-w-[380px] flex-col rounded-2xl border border-slate-200 bg-white shadow-2xl transition-all duration-300 sm:bottom-24 sm:right-6 sm:w-[400px] sm:max-w-none dark:border-white/10 dark:bg-[#111315] ${
           isOpen
             ? "translate-y-0 opacity-100 pointer-events-auto"
-            : "translate-y-10 opacity-0 pointer-events-none"
+            : "translate-y-6 opacity-0 pointer-events-none"
         }`}
       >
         {/* Header */}
@@ -71,12 +77,13 @@ export function Chatbot() {
               <LuSparkles className="h-5 w-5" />
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-slate-900 dark:text-white">AI Clone</h3>
+              <h3 className="text-sm font-semibold text-slate-900 dark:text-white">AI Assistant</h3>
               <p className="text-xs text-slate-500 dark:text-slate-400">Ask about Rishank&apos;s experience</p>
             </div>
           </div>
           <button
             onClick={() => setIsOpen(false)}
+            aria-label="Close chat window"
             className="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-white/5 dark:hover:text-white transition"
           >
             <LuX className="h-5 w-5" />
@@ -105,10 +112,10 @@ export function Chatbot() {
           ))}
           {isLoading && (
             <div className="flex justify-start">
-              <div className="max-w-[85%] rounded-2xl rounded-bl-sm bg-slate-100 px-4 py-3 text-sm text-slate-700 dark:bg-white/5 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce"></span>
-                <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce [animation-delay:0.2s]"></span>
-                <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce [animation-delay:0.4s]"></span>
+              <div className="max-w-[85%] rounded-2xl rounded-bl-sm bg-slate-100 px-4 py-3 text-sm text-slate-700 dark:bg-white/5 flex items-center gap-1.5" aria-label="Loading response">
+                <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" />
+                <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce [animation-delay:0.2s]" />
+                <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce [animation-delay:0.4s]" />
               </div>
             </div>
           )}
@@ -119,15 +126,17 @@ export function Chatbot() {
         <form onSubmit={handleSubmit} className="border-t border-slate-200 p-4 dark:border-white/10">
           <div className="relative flex items-center">
             <input
-              className="w-full rounded-xl border border-slate-300 bg-slate-50 py-3 pl-4 pr-12 text-sm text-slate-900 placeholder:text-slate-500 focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500 dark:border-white/10 dark:bg-ink-900 dark:text-white dark:placeholder:text-slate-400 dark:focus:border-accent-500 dark:focus:ring-accent-500"
+              className="w-full rounded-xl border border-slate-300 bg-slate-50 py-3 pl-4 pr-12 text-sm text-slate-950 placeholder:text-slate-500 focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500 dark:border-white/10 dark:bg-ink-900 dark:text-white dark:placeholder:text-slate-400 dark:focus:border-accent-500 dark:focus:ring-accent-500"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask about skills, experience..."
               disabled={isLoading}
+              aria-label="Ask about skills or experience"
             />
             <button
               type="submit"
               disabled={isLoading || !input.trim()}
+              aria-label="Send message"
               className="absolute right-2 flex h-8 w-8 items-center justify-center rounded-lg bg-accent-600 text-white transition hover:bg-accent-500 disabled:opacity-50"
             >
               <LuSend className="h-4 w-4" />

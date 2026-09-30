@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import { Projects } from "@/components/Projects";
 import { Skills } from "@/components/Skills";
+import { AdBanner } from "@/components/ads/AdBanner";
 import { projects, groupedSkills } from "@/data/portfolio";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
         <About />
         <Projects projects={projects} />
         <Skills groupedSkills={groupedSkills} />
+        <AdBanner />
         <ContactForm />
       </main>
     </>

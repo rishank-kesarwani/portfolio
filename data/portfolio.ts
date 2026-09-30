@@ -3,8 +3,8 @@ export type Project = {
   description: string;
   image: string;
   techStack: string[];
-  githubUrl: string;
-  liveUrl: string;
+  githubUrl?: string;
+  liveUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -14,8 +14,6 @@ export const projects: Project[] = [
       "Organization-wide notification platform for SMS, WhatsApp, email, and push alerts with reliable Kafka-backed delivery flows.",
     image: "Notification platform",
     techStack: ["Node.js", "NestJS", "TypeScript", "Kafka", "PostgreSQL"],
-    githubUrl: "https://github.com/your-username/notification-service",
-    liveUrl: "https://your-notification-service-demo.com",
   },
   {
     title: "React Plugin for CMS",
@@ -23,26 +21,20 @@ export const projects: Project[] = [
       "Multi-language WordPress CMS publishing experience built as an embedded Next.js and React application.",
     image: "CMS plugin",
     techStack: ["React", "Next.js", "Tailwind CSS", "GraphQL", "Storybook"],
-    githubUrl: "https://github.com/your-username/react-cms-plugin",
-    liveUrl: "https://your-cms-plugin-demo.com",
   },
   {
     title: "L18 & MIS Reports",
     description:
-      "Automated reporting suite that saves 50 hours of weekly manual effort across daily and monthly editorial analytics.",
+      "Automated reporting suite saving weekly manual effort across daily and monthly editorial analytics.",
     image: "Analytics reports",
     techStack: ["Python", "Pandas", "NumPy", "Node.js", "GCP"],
-    githubUrl: "https://github.com/your-username/mis-reports",
-    liveUrl: "https://your-reports-demo.com",
   },
   {
     title: "File18 Micro-frontend",
     description:
-      "Configuration-driven micro-frontend platform processing 300k+ daily news content transactions at scale.",
+      "Configuration-driven micro-frontend platform processing high-volume news content transactions at scale.",
     image: "Micro-frontend",
     techStack: ["React", "Webpack", "TypeScript", "JWT", "REST APIs"],
-    githubUrl: "https://github.com/your-username/file18",
-    liveUrl: "https://your-file18-demo.com",
   },
   {
     title: "Network18 Article Assistant",
@@ -50,8 +42,6 @@ export const projects: Project[] = [
       "RAG chatbot that answers reader questions with grounded responses from verified published article content.",
     image: "RAG chatbot",
     techStack: ["LangGraph", "OpenAI", "ChromaDB", "Python", "React"],
-    githubUrl: "https://github.com/your-username/article-assistant",
-    liveUrl: "https://your-article-assistant-demo.com",
   },
   {
     title: "File18 Backend Monorepo",
@@ -59,52 +49,63 @@ export const projects: Project[] = [
       "An Nx-based monorepo containing NestJS microservices for content ingestion, processing, Temporal workflows, and view personalization.",
     image: "Backend microservices",
     techStack: ["NestJS", "TypeScript", "Kafka", "Temporal", "Redis", "PostgreSQL", "GraphQL", "Nx"],
-    githubUrl: "https://github.com/your-username/file18-monorepo",
-    liveUrl: "https://your-file18-monorepo-demo.com",
   },
 ];
 
 export const skills = [
-  "TypeScript",
-  "JavaScript",
   "React",
   "Next.js",
+  "JavaScript",
+  "TypeScript",
+  "HTML",
+  "CSS",
+  "Tailwind CSS",
   "Node.js",
   "NestJS",
-  "Tailwind CSS",
-  "GraphQL",
   "REST APIs",
+  "GraphQL",
   "PostgreSQL",
-  "Kafka",
+  "MySQL",
   "Redis",
   "GCP",
-  "AWS",
+  "Docker",
   "CI/CD",
-  "Cypress",
+  "Kafka",
   "LangGraph",
   "RAG",
   "OpenAI",
+  "LLM Systems",
 ];
 
 export const groupedSkills = [
   {
     category: "Frontend",
     icon: "Layout",
-    skills: ["React JS", "Redux", "JavaScript", "TypeScript", "Tailwind CSS"],
+    skills: ["React", "Next.js", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS"],
   },
   {
     category: "Backend",
+    icon: "Server",
+    skills: ["Node.js", "NestJS", "REST APIs", "GraphQL"],
+  },
+  {
+    category: "Database",
     icon: "Database",
-    skills: ["NodeJS", "REST APIs", "Express", "NestJS", "PostgreSQL"],
+    skills: ["PostgreSQL", "MySQL", "Redis"],
   },
   {
-    category: "Infrastructure / Cloud",
+    category: "Cloud & DevOps",
     icon: "Cloud",
-    skills: ["AWS", "GCP", "Terraform", "CI/CD", "Docker"],
+    skills: ["GCP", "Docker", "CI/CD"],
   },
   {
-    category: "AI / LLM",
+    category: "Messaging",
+    icon: "Layers",
+    skills: ["Kafka"],
+  },
+  {
+    category: "AI & LLMs",
     icon: "Sparkles",
-    skills: ["Chat Completions APIs", "Context Window Optimization", "Token Efficiency", "Agentic Coding Workflows", "LangGraph", "RAG"],
+    skills: ["LangGraph", "RAG", "OpenAI", "LLM Systems"],
   },
 ];

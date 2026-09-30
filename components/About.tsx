@@ -12,13 +12,14 @@ export function About() {
         </div>
         <div className="space-y-5 text-base leading-8 text-slate-600 dark:text-slate-300">
           <p>
-            I work across frontend, backend, cloud workflows, and delivery systems, with
-            production experience at Network18, 3Pillar Global, TCS, and GlobalLogic.
+            I specialize in full-stack architecture, backend microservices, modern frontend applications,
+            and AI-enabled workflows. My core stack includes React, Next.js, TypeScript, Node.js, NestJS,
+            PostgreSQL, Redis, Kafka, Docker, and GCP.
           </p>
           <p>
-            My recent work includes notification platforms, CMS publishing workflows,
-            analytics automation, high-volume micro-frontends, and RAG-based article assistants.
-            I enjoy systems that need both thoughtful UX and dependable engineering underneath.
+            My recent work spans event-driven notification platforms, multi-language CMS publishing architectures,
+            automated reporting pipelines, high-volume news micro-frontends, and RAG-powered assistants built with LangGraph.
+            I focus on systems that balance intuitive user experiences with dependable, resilient engineering underneath.
           </p>
         </div>
       </div>
