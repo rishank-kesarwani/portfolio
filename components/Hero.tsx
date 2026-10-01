@@ -1,51 +1,138 @@
+"use client";
+
+import { trackEvent } from "@/lib/analytics";
+import { LuSparkles, LuArrowRight, LuLayers, LuServer } from "react-icons/lu";
+
+const techStrip = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Node.js",
+  "NestJS",
+  "PostgreSQL",
+  "Redis",
+  "Kafka",
+  "BullMQ",
+  "LangGraph",
+  "RAG",
+  "Docker",
+  "GCP",
+];
+
 export function Hero() {
   return (
     <section
       id="hero"
-      className="mx-auto grid min-h-[calc(100vh-73px)] max-w-6xl items-center gap-10 px-5 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8"
+      className="mx-auto max-w-6xl px-5 pb-16 pt-20 sm:px-6 lg:px-8"
     >
-      <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-accent-600 dark:text-accent-400">
-          Software Development Engineer
-        </p>
-        <h1 className="mt-5 max-w-4xl text-5xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-6xl lg:text-7xl dark:text-white">
-          Building scalable products with calm engineering and sharp execution.
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-          I am Rishank Kesarwani, a full-stack engineer with 8 years of experience across
-          React, Next.js, Node.js, NestJS, cloud automation, and AI-assisted product systems.
-        </p>
-        <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-          <a
-            href="#projects"
-            className="inline-flex items-center justify-center rounded-md bg-accent-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-ink-950"
-          >
-            View projects
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center rounded-md border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100 dark:border-white/15 dark:text-white dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-ink-950"
-          >
-            Contact me
-          </a>
+      <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+        <div>
+          {/* Availability Badge */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1 text-xs font-semibold text-emerald-600 dark:border-emerald-400/20 dark:text-emerald-400">
+            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span>Full-Stack & AI Systems Engineer</span>
+          </div>
+
+          <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl dark:text-white">
+            Building scalable products with calm engineering and sharp execution.
+          </h1>
+
+          <p className="mt-5 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+            Full-Stack Engineer specializing in React, Next.js, Node.js, NestJS, distributed message queues, and production AI/RAG workflows. Over 8 years designing dependable systems from user interfaces to cloud microservices.
+          </p>
+
+          {/* Action CTAs */}
+          <div className="mt-8 flex flex-wrap items-center gap-3.5">
+            <a
+              href="#live-apps"
+              onClick={() => trackEvent("live_app_click", { action: "hero_explore_live_apps" })}
+              className="inline-flex items-center gap-2 rounded-lg bg-accent-600 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-accent-500/20 transition hover:bg-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-ink-950"
+            >
+              <span>Explore Live Apps</span>
+              <LuArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href="#projects"
+              className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50 dark:border-white/15 dark:bg-ink-950 dark:text-white dark:hover:bg-white/10"
+            >
+              Enterprise Projects
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-lg px-4 py-3 text-sm font-semibold text-slate-600 transition hover:text-accent-600 dark:text-slate-300 dark:hover:text-accent-400"
+            >
+              Get in touch
+            </a>
+          </div>
+        </div>
+
+        {/* Feature Cards Column */}
+        <div className="space-y-4">
+          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-slate-300 dark:border-white/10 dark:bg-white/[0.04]">
+            <div className="flex items-start gap-3.5">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-500/10 text-accent-600 dark:text-accent-400">
+                <LuServer className="h-5 w-5" />
+              </div>
+              <div>
+                <dt className="text-base font-bold text-slate-950 dark:text-white">
+                  8+ Years Full-Stack Engineering
+                </dt>
+                <dd className="mt-1 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
+                  Architecting resilient web applications, NestJS microservices, and distributed pipelines with Kafka and Redis.
+                </dd>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-slate-300 dark:border-white/10 dark:bg-white/[0.04]">
+            <div className="flex items-start gap-3.5">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                <LuSparkles className="h-5 w-5" />
+              </div>
+              <div>
+                <dt className="text-base font-bold text-slate-950 dark:text-white">
+                  Production AI & RAG Workflows
+                </dt>
+                <dd className="mt-1 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
+                  Multi-agent travel planning and journalistic article assistants built with LangGraph, ChromaDB, and OpenAI.
+                </dd>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-slate-300 dark:border-white/10 dark:bg-white/[0.04]">
+            <div className="flex items-start gap-3.5">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400">
+                <LuLayers className="h-5 w-5" />
+              </div>
+              <div>
+                <dt className="text-base font-bold text-slate-950 dark:text-white">
+                  Monetization & Cloud Infrastructure
+                </dt>
+                <dd className="mt-1 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
+                  Programmatic AdSense integration, Travelpayouts affiliate engines, Docker containers, and GCP deployments.
+                </dd>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-glow dark:border-white/10 dark:bg-white/[0.04]">
-        <dl className="grid gap-5 sm:grid-cols-3 lg:grid-cols-1">
-          {[
-            ["8+", "Years building full-stack web applications & distributed systems"],
-            ["End-to-End", "Architecture spanning React, Next.js, Node.js, NestJS & GCP"],
-            ["AI & Workflows", "Production RAG assistants, LLM orchestration & automation"],
-          ].map(([value, label]) => (
-            <div key={value} className="rounded-md bg-slate-50 p-5 dark:bg-white/[0.04]">
-              <dt className="text-2xl font-semibold text-slate-950 dark:text-white sm:text-3xl">{value}</dt>
-              <dd className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                {label}
-              </dd>
-            </div>
+      {/* Engineering Stack Strip */}
+      <div className="mt-16 border-t border-slate-200/80 pt-8 dark:border-white/10">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+          Core Technology Stack
+        </p>
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          {techStrip.map((tech) => (
+            <span
+              key={tech}
+              className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-accent-500/40 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
+            >
+              {tech}
+            </span>
           ))}
-        </dl>
+        </div>
       </div>
     </section>
   );
