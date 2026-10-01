@@ -63,7 +63,7 @@ export const liveProducts: Project[] = [
     isLiveApp: true,
     isFeatured: true,
     statusText: "Live Application",
-    liveUrl: "https://travel.rishankkesarwani.com",
+    liveUrl: "https://travel-planner.rishankkesarwani.com",
     monetization: "Travelpayouts Affiliate Network (Marker #579629)",
     aiFeatures: ["Multi-Day Itinerary Orchestration", "Activity Curation", "Context-Aware Suggestions"],
   },

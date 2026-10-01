@@ -146,7 +146,7 @@ export function LiveProducts() {
                 <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                   <span>Target Domain:</span>
                   <span className="font-mono font-medium text-accent-600 dark:text-accent-400">
-                    travel.rishankkesarwani.com
+                    travel-planner.rishankkesarwani.com
                   </span>
                 </div>
               </div>
