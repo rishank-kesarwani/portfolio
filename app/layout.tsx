@@ -11,6 +11,13 @@ export const metadata: Metadata = {
   title: "Rishank Kesarwani | Full-Stack Engineer",
   description:
     "Portfolio of Rishank Kesarwani, a full-stack engineer specializing in React, Next.js, Node.js, NestJS, distributed systems, GCP, and AI-assisted workflows.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   alternates: {
     canonical: siteUrl,
   },
@@ -67,7 +74,7 @@ const jsonLd = {
         "CI/CD",
         "LangGraph",
         "RAG",
-        "LLM Systems"
+        "LLM Systems",
       ],
     },
     {
@@ -86,6 +93,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         {adsenseClientId ? (
           <Script
             async

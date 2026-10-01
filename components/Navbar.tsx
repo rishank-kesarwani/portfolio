@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Logo } from "@/components/Logo";
 import { LuFlame } from "react-icons/lu";
 
 const navItems = [
@@ -24,12 +25,10 @@ export function Navbar() {
       >
         <a
           href="#hero"
-          className="flex items-center gap-2 font-bold tracking-tight text-slate-950 dark:text-white"
+          className="flex items-center gap-2.5 font-bold tracking-tight text-slate-950 transition hover:opacity-90 dark:text-white"
         >
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent-600 font-mono text-xs font-bold text-white shadow-sm">
-            RK
-          </span>
-          <span className="text-sm sm:text-base">Rishank Kesarwani</span>
+          <Logo className="h-7 w-7" />
+          <span className="text-base sm:text-lg">Rishank Kesarwani</span>
         </a>
 
         {/* Desktop Nav */}
