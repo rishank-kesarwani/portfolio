@@ -7,6 +7,7 @@ import { LuFlame } from "react-icons/lu";
 
 const navItems = [
   { label: "Live Apps", href: "#live-apps", isSpecial: true },
+  { label: "Architecture", href: "#architecture" },
   { label: "Projects", href: "#projects" },
   { label: "Engineering", href: "#engineering" },
   { label: "Skills", href: "#skills" },
