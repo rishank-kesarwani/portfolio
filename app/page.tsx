@@ -1,4 +1,5 @@
 import { About } from "@/components/About";
+import { ArchitectureSection } from "@/components/ArchitectureSection";
 import { ContactForm } from "@/components/ContactForm";
 import { EngineeringHighlights } from "@/components/EngineeringHighlights";
 import { Footer } from "@/components/Footer";
@@ -18,6 +19,7 @@ export default function Home() {
       <main id="content">
         <Hero />
         <LiveProducts />
+        <ArchitectureSection />
         <Projects />
         <EngineeringHighlights />
         <MonetizationShowcase />
