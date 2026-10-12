@@ -19,10 +19,11 @@ export const metadata: Metadata = {
     "Portfolio and technical engineering notes of Rishank Kesarwani, a full-stack engineer specializing in React, Next.js, Node.js, NestJS, distributed systems, and production AI architectures.",
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any" },
       { url: "/favicon.svg", type: "image/svg+xml" },
     ],
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   alternates: {
     canonical: siteUrl,
@@ -106,7 +107,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         {isAdSenseConfigured ? (
           <Script
             async
