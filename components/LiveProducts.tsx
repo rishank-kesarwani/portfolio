@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { aiEngineeringProjects, type Project } from "@/data/portfolio";
 import { ProjectModal } from "@/components/ProjectModal";
 import { trackEvent } from "@/lib/analytics";
@@ -126,13 +127,23 @@ export function LiveProducts() {
 
             {/* Card Actions */}
             <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4 dark:border-white/5">
-              <button
-                onClick={() => setSelectedProject(project)}
-                className="inline-flex items-center gap-1 text-xs font-semibold text-accent-600 transition hover:text-accent-500 dark:text-accent-400"
-              >
-                <span>Architecture Details</span>
-                <LuArrowRight className="h-3.5 w-3.5" />
-              </button>
+              {project.caseStudySlug ? (
+                <Link
+                  href={`/case-studies/${project.caseStudySlug}`}
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-accent-600 transition hover:text-accent-500 dark:text-accent-400"
+                >
+                  <span>Case Study</span>
+                  <LuArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              ) : (
+                <button
+                  onClick={() => setSelectedProject(project)}
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-accent-600 transition hover:text-accent-500 dark:text-accent-400"
+                >
+                  <span>Architecture Details</span>
+                  <LuArrowRight className="h-3.5 w-3.5" />
+                </button>
+              )}
 
               <div className="flex items-center gap-2">
                 {project.githubUrl && (
@@ -212,13 +223,23 @@ export function LiveProducts() {
               </div>
 
               <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4 dark:border-white/5">
-                <button
-                  onClick={() => setSelectedProject(app)}
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-accent-600 transition hover:text-accent-500 dark:text-accent-400"
-                >
-                  <span>Details</span>
-                  <LuArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
-                </button>
+                {app.caseStudySlug ? (
+                  <Link
+                    href={`/case-studies/${app.caseStudySlug}`}
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-accent-600 transition hover:text-accent-500 dark:text-accent-400"
+                  >
+                    <span>Case Study</span>
+                    <LuArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => setSelectedProject(app)}
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-accent-600 transition hover:text-accent-500 dark:text-accent-400"
+                  >
+                    <span>Details</span>
+                    <LuArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+                  </button>
+                )}
 
                 <div className="flex items-center gap-2">
                   {app.githubUrl && (

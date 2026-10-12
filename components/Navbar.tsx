@@ -1,18 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Logo } from "@/components/Logo";
-import { LuFlame } from "react-icons/lu";
+import { LuSparkles } from "react-icons/lu";
 
 const navItems = [
-  { label: "Live Apps", href: "#live-apps", isSpecial: true },
-  { label: "Architecture", href: "#architecture" },
-  { label: "Projects", href: "#projects" },
-  { label: "Engineering", href: "#engineering" },
-  { label: "Skills", href: "#skills" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Case Studies", href: "/case-studies", isSpecial: true },
+  { label: "Engineering Notes", href: "/engineering-notes" },
+  { label: "Projects", href: "/projects" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -24,19 +24,19 @@ export function Navbar() {
         className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5 sm:px-6 lg:px-8"
         aria-label="Primary navigation"
       >
-        <a
-          href="#hero"
+        <Link
+          href="/"
           className="flex items-center gap-2.5 font-bold tracking-tight text-slate-950 transition hover:opacity-90 dark:text-white"
         >
           <Logo className="h-7 w-7" />
           <span className="text-base sm:text-lg">Rishank Kesarwani</span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden items-center gap-6 md:flex">
           <div className="flex items-center gap-5">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className={`text-sm font-medium transition ${
@@ -45,20 +45,20 @@ export function Navbar() {
                     : "text-slate-600 hover:text-accent-600 dark:text-slate-300 dark:hover:text-accent-400"
                 }`}
               >
-                {item.isSpecial && <LuFlame className="h-3.5 w-3.5 text-accent-500" />}
+                {item.isSpecial && <LuSparkles className="h-3.5 w-3.5 text-accent-500" />}
                 <span>{item.label}</span>
-              </a>
+              </Link>
             ))}
           </div>
 
           <div className="flex items-center gap-4 border-l border-slate-200 pl-4 dark:border-white/10">
-            <a
-              href="#live-apps"
+            <Link
+              href="/case-studies"
               className="inline-flex items-center gap-1.5 rounded-lg bg-accent-600 px-3.5 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-accent-500"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
-              <span>Explore Apps</span>
-            </a>
+              <span>Explore Case Studies</span>
+            </Link>
             <ThemeToggle />
           </div>
         </div>
@@ -105,7 +105,7 @@ export function Navbar() {
       >
         <div className="mx-auto flex max-w-6xl flex-col gap-1">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className={`flex items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium transition ${
@@ -118,10 +118,10 @@ export function Navbar() {
               <span>{item.label}</span>
               {item.isSpecial && (
                 <span className="rounded bg-accent-600 px-1.5 py-0.5 text-[10px] font-bold text-white">
-                  Live
+                  6 Studies
                 </span>
               )}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

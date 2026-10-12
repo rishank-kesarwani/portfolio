@@ -21,6 +21,15 @@ export function About() {
             automated reporting pipelines, high-volume news micro-frontends, and RAG-powered assistants built with LangGraph.
             I focus on systems that balance intuitive user experiences with dependable, resilient engineering underneath.
           </p>
+          <div className="pt-2">
+            <a
+              href="/about"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-600 hover:underline dark:text-accent-400"
+            >
+              <span>Read complete author profile & engineering background</span>
+              <span>→</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

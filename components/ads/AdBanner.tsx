@@ -13,6 +13,11 @@ type AdBannerProps = {
   className?: string;
   format?: "auto" | "fluid" | "rectangle" | "horizontal";
   responsive?: boolean;
+  /**
+   * Only render ad units on substantial editorial content pages.
+   * AdSense policies restrict ads on navigation-only, empty, or thin pages.
+   */
+  isEditorialPage?: boolean;
 };
 
 export function AdBanner({
@@ -20,12 +25,17 @@ export function AdBanner({
   className = "",
   format = "auto",
   responsive = true,
+  isEditorialPage = false,
 }: AdBannerProps) {
   const clientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
   const isPushed = useRef(false);
 
+  // Validate publisher client ID format (must match ca-pub-XXXXXXXXXXXXXXXX)
+  const isValidClient = Boolean(clientId && /^ca-pub-\d{10,20}$/.test(clientId));
+
   useEffect(() => {
-    if (!clientId || isPushed.current) return;
+    // Only initialize ads on verified editorial pages with valid client ID
+    if (!isValidClient || !isEditorialPage || isPushed.current) return;
 
     try {
       if (typeof window !== "undefined") {
@@ -33,18 +43,19 @@ export function AdBanner({
         isPushed.current = true;
       }
     } catch {
-      // AdSense initialization error or adblocker encountered
+      // Gracefully ignore adblocker or initialization errors
     }
-  }, [clientId]);
+  }, [isValidClient, isEditorialPage]);
 
-  if (!clientId) {
+  // Do not render ads if publisher ID is missing/invalid or on non-editorial pages
+  if (!isValidClient || !isEditorialPage) {
     return null;
   }
 
   return (
     <aside
       aria-label="Advertisement"
-      className={`mx-auto my-8 flex w-full max-w-6xl justify-center overflow-hidden px-5 sm:px-6 lg:px-8 ${className}`}
+      className={`mx-auto my-10 flex w-full max-w-4xl justify-center overflow-hidden px-4 ${className}`}
     >
       <div className="w-full text-center">
         <ins

@@ -32,6 +32,7 @@ export type Project = {
   monetization?: string;
   aiFeatures?: string[];
   badges?: string[];
+  caseStudySlug?: string;
 };
 
 export const aiEngineeringProjects: Project[] = [
@@ -73,6 +74,7 @@ export const aiEngineeringProjects: Project[] = [
     githubUrl: "https://github.com/rishank-kesarwani/ai-pr-review-platform",
     badges: ["LIVE", "AI ENGINEERING", "GITHUB APP", "BULLMQ"],
     aiFeatures: ["AST-Informed Code Review", "Multi-Agent Finding Arbitration", "Automated GitHub Checks"],
+    caseStudySlug: "ai-pr-review",
   },
   {
     id: "model-regression-detection",
@@ -110,6 +112,7 @@ export const aiEngineeringProjects: Project[] = [
     githubUrl: "https://github.com/rishank-kesarwani/ai-model-regression-detection",
     badges: ["LIVE", "AI EVALUATION", "CI/CD GATE", "BENCHMARKING"],
     aiFeatures: ["Golden Dataset Benchmarking", "Schema Adherence Validation", "Cost & Latency Tracking"],
+    caseStudySlug: "model-regression-detection",
   },
   {
     id: "ai-platform",
@@ -148,6 +151,7 @@ export const aiEngineeringProjects: Project[] = [
     githubUrl: "https://github.com/rishank-kesarwani/ai-platform",
     badges: ["AI INFRASTRUCTURE", "RAG", "QDRANT", "SEMANTIC CACHE"],
     aiFeatures: ["Qdrant Vector Search", "Semantic Redis Caching", "Multi-Tier Memory Engine"],
+    caseStudySlug: "ai-platform",
   },
   {
     id: "travel-planner",
@@ -187,6 +191,7 @@ export const aiEngineeringProjects: Project[] = [
     monetization: "Travelpayouts Affiliate Network (Marker #579629)",
     badges: ["LIVE", "AI FULL-STACK", "LANGGRAPH", "TRAVELPAYOUTS"],
     aiFeatures: ["Multi-Day Itinerary Generation", "Context-Aware Curation", "Dynamic Activity Suggestions"],
+    caseStudySlug: "ai-travel-planner",
   },
   {
     id: "movie-matcher",
@@ -326,6 +331,7 @@ export const enterpriseProjects: Project[] = [
     statusText: "Shared Platform",
     githubUrl: "https://github.com/rishank-kesarwani/notification-service",
     badges: ["INFRASTRUCTURE", "KAFKA", "NESTJS", "DISTRIBUTED"],
+    caseStudySlug: "notification-service",
   },
   {
     id: "react-cms-plugin",
@@ -372,6 +378,7 @@ export const enterpriseProjects: Project[] = [
     isEnterprise: true,
     statusText: "Enterprise Platform",
     badges: ["ENTERPRISE", "PYTHON", "GCP", "ETL"],
+    caseStudySlug: "production-reporting-database-optimization",
   },
   {
     id: "file18-microfrontend",

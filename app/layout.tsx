@@ -3,14 +3,20 @@ import Script from "next/script";
 import { Chatbot } from "@/components/Chatbot";
 import "./globals.css";
 
-const siteUrl = "https://rishankkesharwani.com";
+const siteUrl = "https://rishankkesarwani.com";
 const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
+const isAdSenseConfigured = Boolean(
+  adsenseClientId && /^ca-pub-\d+$/.test(adsenseClientId)
+);
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Rishank Kesarwani | Full-Stack Engineer",
+  title: {
+    default: "Rishank Kesarwani | Full-Stack & AI Systems Engineer",
+    template: "%s | Rishank Kesarwani",
+  },
   description:
-    "Portfolio of Rishank Kesarwani, a full-stack engineer specializing in React, Next.js, Node.js, NestJS, distributed systems, GCP, and AI-assisted workflows.",
+    "Portfolio and technical engineering notes of Rishank Kesarwani, a full-stack engineer specializing in React, Next.js, Node.js, NestJS, distributed systems, and production AI architectures.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -22,9 +28,9 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   openGraph: {
-    title: "Rishank Kesarwani | Full-Stack Engineer",
+    title: "Rishank Kesarwani | Full-Stack & AI Systems Engineer",
     description:
-      "Portfolio of Rishank Kesarwani, a full-stack engineer specializing in React, Next.js, Node.js, NestJS, distributed systems, GCP, and AI-assisted workflows.",
+      "Engineering case studies, technical notes, and live production platforms across distributed backends, AI orchestration, and cloud systems.",
     url: siteUrl,
     siteName: "Rishank Kesarwani",
     locale: "en_US",
@@ -32,9 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rishank Kesarwani | Full-Stack Engineer",
+    title: "Rishank Kesarwani | Full-Stack & AI Systems Engineer",
     description:
-      "Portfolio of Rishank Kesarwani, a full-stack engineer specializing in React, Next.js, Node.js, NestJS, distributed systems, GCP, and AI-assisted workflows.",
+      "Engineering case studies, technical notes, and live production platforms across distributed backends, AI orchestration, and cloud systems.",
   },
   robots: {
     index: true,
@@ -58,6 +64,9 @@ const jsonLd = {
       "jobTitle": "Full-Stack Software Engineer",
       "url": siteUrl,
       "email": "rishankkesar111@gmail.com",
+      "sameAs": [
+        "https://github.com/rishank-kesarwani",
+      ],
       "knowsAbout": [
         "React",
         "Next.js",
@@ -75,12 +84,16 @@ const jsonLd = {
         "LangGraph",
         "RAG",
         "LLM Systems",
+        "Qdrant",
+        "BullMQ",
       ],
     },
     {
       "@type": "WebSite",
-      "name": "Rishank Kesarwani | Full-Stack Engineer",
+      "name": "Rishank Kesarwani",
       "url": siteUrl,
+      "description":
+        "Engineering portfolio, technical case studies, and architecture notes by Rishank Kesarwani.",
     },
   ],
 };
@@ -94,12 +107,12 @@ export default function RootLayout({
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        {adsenseClientId ? (
+        {isAdSenseConfigured ? (
           <Script
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
             crossOrigin="anonymous"
-            strategy="beforeInteractive"
+            strategy="afterInteractive"
           />
         ) : null}
         <script

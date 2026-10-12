@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { enterpriseProjects, type Project } from "@/data/portfolio";
 import { ProjectModal } from "@/components/ProjectModal";
-import { LuLayers, LuLock, LuArrowUpRight } from "react-icons/lu";
+import { LuLayers, LuLock, LuArrowUpRight, LuBookOpen } from "react-icons/lu";
 
 export function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -57,8 +58,7 @@ export function Projects() {
           {filteredProjects.map((project) => (
             <article
               key={project.id}
-              onClick={() => setSelectedProject(project)}
-              className="group flex cursor-pointer flex-col justify-between overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-accent-500/40 hover:shadow-lg dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-accent-400/30"
+              className="group flex flex-col justify-between overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-accent-500/40 hover:shadow-lg dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-accent-400/30"
             >
               <div>
                 <div className="flex items-center justify-between">
@@ -71,9 +71,24 @@ export function Projects() {
                   </div>
                 </div>
 
-                <h3 className="mt-4 flex items-center justify-between text-xl font-bold tracking-tight text-slate-950 group-hover:text-accent-600 dark:text-white dark:group-hover:text-accent-400">
-                  <span>{project.title}</span>
-                  <LuArrowUpRight className="h-4 w-4 shrink-0 opacity-0 transition group-hover:opacity-100" />
+                <h3 className="mt-4 text-xl font-bold tracking-tight text-slate-950 group-hover:text-accent-600 dark:text-white dark:group-hover:text-accent-400">
+                  {project.caseStudySlug ? (
+                    <Link
+                      href={`/case-studies/${project.caseStudySlug}`}
+                      className="inline-flex items-center gap-1 hover:underline"
+                    >
+                      <span>{project.title}</span>
+                      <LuArrowUpRight className="h-4 w-4 shrink-0 opacity-0 transition group-hover:opacity-100" />
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setSelectedProject(project)}
+                      className="text-left font-bold"
+                    >
+                      {project.title}
+                    </button>
+                  )}
                 </h3>
 
                 <p className="mt-2.5 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
@@ -104,6 +119,27 @@ export function Projects() {
                     </li>
                   ))}
                 </ul>
+
+                <div className="mt-4 flex items-center justify-between pt-2">
+                  {project.caseStudySlug ? (
+                    <Link
+                      href={`/case-studies/${project.caseStudySlug}`}
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-accent-600 hover:text-accent-500 dark:text-accent-400"
+                    >
+                      <LuBookOpen className="h-3.5 w-3.5" />
+                      <span>Read Case Study</span>
+                    </Link>
+                  ) : (
+                    <span />
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => setSelectedProject(project)}
+                    className="text-xs font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+                  >
+                    Quick Overview
+                  </button>
+                </div>
               </div>
             </article>
           ))}
