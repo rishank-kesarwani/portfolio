@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     "In-depth architectural case studies on shared AI platforms, Kafka notification services, model regression testing, and full-stack product engineering.",
   alternates: {
-    canonical: "https://rishankkesarwani.com/case-studies",
+    canonical: "https://www.rishankkesarwani.com/case-studies",
   },
   openGraph: {
     title: "Engineering Case Studies | Rishank Kesarwani",
     description:
       "Deep technical reviews of real systems: architecture diagrams, API contracts, failure modes, and lessons learned from production implementations.",
-    url: "https://rishankkesarwani.com/case-studies",
+    url: "https://www.rishankkesarwani.com/case-studies",
   },
 };
 
@@ -28,13 +28,13 @@ const jsonLd = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://rishankkesarwani.com",
+      item: "https://www.rishankkesarwani.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Case Studies",
-      item: "https://rishankkesarwani.com/case-studies",
+      item: "https://www.rishankkesarwani.com/case-studies",
     },
   ],
 };

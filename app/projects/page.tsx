@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     "Production AI systems, distributed microservices, and enterprise web applications engineered by Rishank Kesarwani.",
   alternates: {
-    canonical: "https://rishankkesarwani.com/projects",
+    canonical: "https://www.rishankkesarwani.com/projects",
   },
   openGraph: {
     title: "Projects & Engineering Portfolio | Rishank Kesarwani",
     description:
       "Production AI systems, distributed microservices, and enterprise web applications engineered by Rishank Kesarwani.",
-    url: "https://rishankkesarwani.com/projects",
+    url: "https://www.rishankkesarwani.com/projects",
   },
 };
 
@@ -29,13 +29,13 @@ const jsonLd = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://rishankkesarwani.com",
+      item: "https://www.rishankkesarwani.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Projects",
-      item: "https://rishankkesarwani.com/projects",
+      item: "https://www.rishankkesarwani.com/projects",
     },
   ],
 };

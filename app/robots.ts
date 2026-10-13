@@ -20,6 +20,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://rishankkesarwani.com/sitemap.xml",
+    sitemap: "https://www.rishankkesarwani.com/sitemap.xml",
   };
 }

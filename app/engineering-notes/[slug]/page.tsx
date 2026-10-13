@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const siteUrl = "https://rishankkesarwani.com";
+  const siteUrl = "https://www.rishankkesarwani.com";
   const url = `${siteUrl}/engineering-notes/${note.slug}`;
 
   return {
@@ -68,7 +68,7 @@ export default async function EngineeringNoteDetailPage({ params }: Props) {
     notFound();
   }
 
-  const siteUrl = "https://rishankkesarwani.com";
+  const siteUrl = "https://www.rishankkesarwani.com";
   const relatedNotes = engineeringNotes.filter((n) => n.slug !== note.slug).slice(0, 2);
 
   const jsonLd = {

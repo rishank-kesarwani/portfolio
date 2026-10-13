@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     "Get in touch with Rishank Kesarwani for senior engineering roles, architectural consulting, distributed systems, and AI engineering opportunities.",
   alternates: {
-    canonical: "https://rishankkesarwani.com/contact",
+    canonical: "https://www.rishankkesarwani.com/contact",
   },
   openGraph: {
     title: "Contact Rishank Kesarwani | Full-Stack & AI Systems Engineer",
     description:
       "Get in touch with Rishank Kesarwani for senior engineering roles, architectural consulting, distributed systems, and AI engineering opportunities.",
-    url: "https://rishankkesarwani.com/contact",
+    url: "https://www.rishankkesarwani.com/contact",
   },
 };
 
@@ -25,12 +25,12 @@ const jsonLd = {
   "@type": "ContactPage",
   name: "Contact Rishank Kesarwani",
   description: "Contact page for full-stack engineer Rishank Kesarwani.",
-  url: "https://rishankkesarwani.com/contact",
+  url: "https://www.rishankkesarwani.com/contact",
   mainEntity: {
     "@type": "Person",
     name: "Rishank Kesarwani",
     email: "rishankkesar111@gmail.com",
-    url: "https://rishankkesarwani.com",
+    url: "https://www.rishankkesarwani.com",
   },
 };
 

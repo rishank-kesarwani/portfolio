@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     "Terms of Use for rishankkesarwani.com governing website usage, intellectual property, open-source references, and external links.",
   alternates: {
-    canonical: "https://rishankkesarwani.com/terms",
+    canonical: "https://www.rishankkesarwani.com/terms",
   },
   openGraph: {
     title: "Terms of Use | Rishank Kesarwani",
     description:
       "Terms of Use for rishankkesarwani.com governing website usage, intellectual property, open-source references, and external links.",
-    url: "https://rishankkesarwani.com/terms",
+    url: "https://www.rishankkesarwani.com/terms",
   },
 };
 
@@ -50,7 +50,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-lg font-bold text-slate-950 dark:text-white">1. Acceptance of Terms</h2>
             <p className="mt-2">
-              By accessing and using this website (https://rishankkesarwani.com), you agree to comply with and be bound by these Terms of Use. If you do not agree with any part of these terms, please do not use the website.
+              By accessing and using this website (https://www.rishankkesarwani.com), you agree to comply with and be bound by these Terms of Use. If you do not agree with any part of these terms, please do not use the website.
             </p>
           </section>
 

@@ -18,11 +18,15 @@ import {
   LuServer,
   LuMountain,
   LuGithub,
+  LuZap,
+  LuActivity,
 } from "react-icons/lu";
 
 const iconMap: Record<string, React.ReactNode> = {
   "ai-pr-review": <LuGitPullRequest className="h-6 w-6 text-purple-500" />,
   "model-regression-detection": <LuShieldAlert className="h-6 w-6 text-rose-500" />,
+  "ai-cost-routing-autopilot": <LuZap className="h-6 w-6 text-emerald-500" />,
+  "pipeline-observability": <LuActivity className="h-6 w-6 text-cyan-500" />,
   "ai-platform": <LuServer className="h-6 w-6 text-indigo-500" />,
   "travel-planner": <LuCompass className="h-6 w-6 text-accent-500" />,
   "movie-matcher": <LuFilm className="h-6 w-6 text-violet-500" />,
@@ -182,7 +186,7 @@ export function LiveProducts() {
             Deployed Full-Stack AI Products
           </h3>
           <span className="text-xs text-slate-500 dark:text-slate-400">
-            5 Active Public Applications
+            {otherLiveApps.length} Active Public Applications
           </span>
         </div>
 

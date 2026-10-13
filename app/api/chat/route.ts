@@ -25,15 +25,23 @@ function generateGroundedFallback(userMessage: string): string {
   const query = userMessage.toLowerCase();
 
   if (query.includes("pr review") || query.includes("code review") || query.includes("github app")) {
-    return "The **AI PR Review Platform** (live at https://ai-pr-review.rishankkesarwani.com) is an automated code review system built with Next.js 15, NestJS, and BullMQ. It intercepts GitHub Pull Request webhooks, performs AST changed-file static analysis, runs multi-agent AI code reviews with finding arbitration to reduce noise, and posts automated GitHub Check annotations and inline comments.";
+    return "The **AI PR Review Platform** (live at https://ai-pr-review.rishankkesarwani.com/reviews) is an automated code review system built with Next.js 15, NestJS, and BullMQ. It intercepts GitHub Pull Request webhooks, performs AST changed-file static analysis, runs multi-agent AI code reviews with finding arbitration to reduce noise, and posts automated GitHub Check annotations and inline comments.";
   }
 
   if (query.includes("regression") || query.includes("model regression") || query.includes("benchmark") || query.includes("eval")) {
-    return "The **AI Model Regression Detection** platform (live at https://model-regression.rishankkesarwani.com) is an automated evaluation framework. It benchmarks prompt changes and candidate LLMs against golden datasets, checking for Quality, Latency, Token Cost, and Safety regressions. It generates statistical PASS/WARN/FAIL reports and serves as an automated CI/CD gate.";
+    return "The **AI Model Regression Detection** platform (live at https://model-regression.rishankkesarwani.com/) is an automated evaluation framework. It benchmarks prompt changes and candidate LLMs against golden datasets, checking for Quality, Latency, Token Cost, and Safety regressions. It generates statistical PASS/WARN/FAIL reports and serves as an automated CI/CD gate.";
   }
 
   if (query.includes("ai platform") || query.includes("infrastructure") || query.includes("architecture")) {
     return "The **AI Platform** (https://github.com/rishank-kesarwani/ai-platform) is a centralized NestJS microservice that unifies AI capabilities for all ecosystem applications. It features a POST /api/v1/ai/chat gateway, hybrid RAG over Qdrant vector databases, Redis semantic caching for sub-millisecond repeated queries, ephemeral & persistent memory tiers, and service-to-service API key authentication.";
+  }
+
+  if (query.includes("cost") || query.includes("routing") || query.includes("autopilot")) {
+    return "The **AI Cost & Routing Autopilot** (live at https://ai-cost-routing-autopilot.rishankkesarwani.com/) is an intelligent LLM gateway that dynamically routes prompts across model tiers based on semantic complexity, token budgets, and latency SLAs to optimize inference costs.";
+  }
+
+  if (query.includes("observability") || query.includes("pipeline") || query.includes("tracing")) {
+    return "The **AI Pipeline Observability Platform** (live at https://pipeline-observability.rishankkesarwani.com/) is a real-time distributed telemetry engine capturing DAG execution traces, token consumption waterfalls, and automated error diagnostics for multi-step AI agents.";
   }
 
   if (query.includes("rag") || query.includes("retrieval") || query.includes("vector") || query.includes("qdrant")) {
@@ -41,7 +49,7 @@ function generateGroundedFallback(userMessage: string): string {
   }
 
   if (query.includes("travel") || query.includes("trip") || query.includes("itinerary")) {
-    return "The **AI Travel Planner** (live at https://travel-planner.rishankkesarwani.com) is a full-stack Next.js and NestJS application. It uses a LangGraph multi-agent workflow to build customized multi-day travel itineraries, manages asynchronous background jobs with BullMQ and Redis, and integrates Travelpayouts affiliate monetization (Marker #579629).";
+    return "The **AI Travel Planner** (live at https://travel-planner.rishankkesarwani.com/plan-trip) is a full-stack Next.js and NestJS application. It uses a LangGraph multi-agent workflow to build customized multi-day travel itineraries, manages asynchronous background jobs with BullMQ and Redis, and integrates Travelpayouts affiliate monetization (Marker #579629).";
   }
 
   if (query.includes("tech") || query.includes("skill") || query.includes("stack") || query.includes("specializ")) {
@@ -49,7 +57,7 @@ function generateGroundedFallback(userMessage: string): string {
   }
 
   if (query.includes("movie") || query.includes("sports") || query.includes("study") || query.includes("hiking")) {
-    return "Rishank's live public applications include:\n- **AI Movie Matcher** (https://movie-matcher.rishankkesarwani.com) - Mood-based conversational cinema discovery.\n- **AI Sports Tracker** (https://sports-tracker.rishankkesarwani.com) - Athletic fixtures, timelines, and AI match summaries.\n- **AI Study Spot Finder** (https://study-spot-finder.rishankkesarwani.com) - Geolocation study space discovery with amenity filters.\n- **AI Hiking Explorer** (https://hiking-explorer.rishankkesarwani.com) - Trail terrain analytics and AI preparedness advisories.";
+    return "Rishank's live public applications include:\n- **AI Cost & Routing Autopilot** (https://ai-cost-routing-autopilot.rishankkesarwani.com/) - Dynamic model tier routing and token budget optimization.\n- **AI Pipeline Observability** (https://pipeline-observability.rishankkesarwani.com/) - Distributed tracing and latency waterfalls for multi-step agents.\n- **AI Travel Planner** (https://travel-planner.rishankkesarwani.com/plan-trip) - Multi-day itinerary planning with LangGraph.\n- **AI Movie Matcher** (https://movie-matcher.rishankkesarwani.com/) - Mood-based conversational cinema discovery.\n- **AI Sports Tracker** (https://sports-tracker.rishankkesarwani.com/) - Athletic fixtures, timelines, and AI match summaries.\n- **AI Study Spot Finder** (https://study-spot-finder.rishankkesarwani.com/) - Geolocation study space discovery with amenity filters.\n- **AI Hiking Explorer** (https://hiking-explorer.rishankkesarwani.com/nearby) - Trail terrain analytics and AI preparedness advisories.";
   }
 
   if (query.includes("contact") || query.includes("hire") || query.includes("email") || query.includes("reach")) {

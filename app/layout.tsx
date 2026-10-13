@@ -3,7 +3,7 @@ import Script from "next/script";
 import { Chatbot } from "@/components/Chatbot";
 import "./globals.css";
 
-const siteUrl = "https://rishankkesarwani.com";
+const siteUrl = "https://www.rishankkesarwani.com";
 const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 const isAdSenseConfigured = Boolean(
   adsenseClientId && /^ca-pub-\d+$/.test(adsenseClientId)

@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     "Original architectural articles on background task idempotency, LLM regression gates, vector tenant authorization, and database query optimization.",
   alternates: {
-    canonical: "https://rishankkesarwani.com/engineering-notes",
+    canonical: "https://www.rishankkesarwani.com/engineering-notes",
   },
   openGraph: {
     title: "Engineering Notes & Deep Dives | Rishank Kesarwani",
     description:
       "Original architectural articles on background task idempotency, LLM regression gates, vector tenant authorization, and database query optimization.",
-    url: "https://rishankkesarwani.com/engineering-notes",
+    url: "https://www.rishankkesarwani.com/engineering-notes",
   },
 };
 
@@ -28,13 +28,13 @@ const jsonLd = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://rishankkesarwani.com",
+      item: "https://www.rishankkesarwani.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Engineering Notes",
-      item: "https://rishankkesarwani.com/engineering-notes",
+      item: "https://www.rishankkesarwani.com/engineering-notes",
     },
   ],
 };

@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const siteUrl = "https://rishankkesarwani.com";
+  const siteUrl = "https://www.rishankkesarwani.com";
   const url = `${siteUrl}/case-studies/${study.slug}`;
 
   return {
@@ -70,7 +70,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
     notFound();
   }
 
-  const siteUrl = "https://rishankkesarwani.com";
+  const siteUrl = "https://www.rishankkesarwani.com";
   const relatedStudies = caseStudies.filter((s) => s.slug !== study.slug).slice(0, 2);
 
   const jsonLd = {

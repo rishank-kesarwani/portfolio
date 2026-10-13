@@ -136,13 +136,13 @@ export function Footer() {
               GitHub
             </a>
             <a
-              href="https://rishankkesarwani.com/sitemap.xml"
+              href="https://www.rishankkesarwani.com/sitemap.xml"
               className="transition hover:text-slate-900 dark:hover:text-white"
             >
               Sitemap
             </a>
             <a
-              href="https://rishankkesarwani.com/robots.txt"
+              href="https://www.rishankkesarwani.com/robots.txt"
               className="transition hover:text-slate-900 dark:hover:text-white"
             >
               Robots.txt

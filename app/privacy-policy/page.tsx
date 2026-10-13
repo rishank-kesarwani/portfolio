@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     "Privacy Policy for rishankkesarwani.com. Explains data practices, contact form submission handling, cookies, analytics, and advertising disclosure.",
   alternates: {
-    canonical: "https://rishankkesarwani.com/privacy-policy",
+    canonical: "https://www.rishankkesarwani.com/privacy-policy",
   },
   openGraph: {
     title: "Privacy Policy | Rishank Kesarwani",
     description:
       "Privacy Policy for rishankkesarwani.com. Explains data practices, contact form submission handling, cookies, analytics, and advertising disclosure.",
-    url: "https://rishankkesarwani.com/privacy-policy",
+    url: "https://www.rishankkesarwani.com/privacy-policy",
   },
 };
 
@@ -51,8 +51,8 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-lg font-bold text-slate-950 dark:text-white">1. Overview</h2>
             <p className="mt-2">
               This Privacy Policy explains how Rishank Kesarwani (&quot;I&quot;, &quot;me&quot;, or &quot;the site&quot;) collects, uses, and safeguards information when you visit{" "}
-              <a href="https://rishankkesarwani.com" className="font-semibold text-accent-600 hover:underline dark:text-accent-400">
-                https://rishankkesarwani.com
+              <a href="https://www.rishankkesarwani.com" className="font-semibold text-accent-600 hover:underline dark:text-accent-400">
+                https://www.rishankkesarwani.com
               </a>
               . I respect your privacy and am committed to maintaining transparent, minimal data collection practices.
             </p>

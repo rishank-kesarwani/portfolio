@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   description:
     "Engineering profile, technical background, and architectural experience of Rishank Kesarwani. 8+ years designing scalable backends, event streaming, and AI workflows.",
   alternates: {
-    canonical: "https://rishankkesarwani.com/about",
+    canonical: "https://www.rishankkesarwani.com/about",
   },
   openGraph: {
     title: "About Rishank Kesarwani | Full-Stack & AI Systems Engineer",
     description:
       "Engineering profile, technical background, and architectural experience of Rishank Kesarwani. 8+ years designing scalable backends, event streaming, and AI workflows.",
-    url: "https://rishankkesarwani.com/about",
+    url: "https://www.rishankkesarwani.com/about",
   },
 };
 
@@ -39,13 +39,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://rishankkesarwani.com",
+          item: "https://www.rishankkesarwani.com",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "About",
-          item: "https://rishankkesarwani.com/about",
+          item: "https://www.rishankkesarwani.com/about",
         },
       ],
     },
@@ -53,7 +53,7 @@ const jsonLd = {
       "@type": "Person",
       name: "Rishank Kesarwani",
       jobTitle: "Full-Stack Software Engineer",
-      url: "https://rishankkesarwani.com",
+      url: "https://www.rishankkesarwani.com",
       email: "rishankkesar111@gmail.com",
       sameAs: [
         "https://github.com/rishank-kesarwani",

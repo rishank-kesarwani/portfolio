@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     "Affiliate Disclosure for rishankkesarwani.com detailing commercial partnerships, Travelpayouts integration, and FTC compliance.",
   alternates: {
-    canonical: "https://rishankkesarwani.com/affiliate-disclosure",
+    canonical: "https://www.rishankkesarwani.com/affiliate-disclosure",
   },
   openGraph: {
     title: "Affiliate Disclosure | Rishank Kesarwani",
     description:
       "Affiliate Disclosure for rishankkesarwani.com detailing commercial partnerships, Travelpayouts integration, and FTC compliance.",
-    url: "https://rishankkesarwani.com/affiliate-disclosure",
+    url: "https://www.rishankkesarwani.com/affiliate-disclosure",
   },
 };
 

@@ -12,16 +12,16 @@ test('1. Production Domain Consistency Check', () => {
 
   // Verify correct domain is used
   assert.ok(
-    robotsContent.includes('https://rishankkesarwani.com/sitemap.xml'),
-    'robots.ts must reference https://rishankkesarwani.com/sitemap.xml'
+    robotsContent.includes('https://www.rishankkesarwani.com/sitemap.xml'),
+    'robots.ts must reference https://www.rishankkesarwani.com/sitemap.xml'
   );
   assert.ok(
-    sitemapContent.includes('const siteUrl = "https://rishankkesarwani.com";'),
-    'sitemap.ts must use https://rishankkesarwani.com'
+    sitemapContent.includes('const siteUrl = "https://www.rishankkesarwani.com";'),
+    'sitemap.ts must use https://www.rishankkesarwani.com'
   );
   assert.ok(
-    layoutContent.includes('const siteUrl = "https://rishankkesarwani.com";'),
-    'layout.tsx must use https://rishankkesarwani.com'
+    layoutContent.includes('const siteUrl = "https://www.rishankkesarwani.com";'),
+    'layout.tsx must use https://www.rishankkesarwani.com'
   );
 
   // Verify the misspelled domain with 'h' is completely eliminated
